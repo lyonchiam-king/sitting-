@@ -1,0 +1,6 @@
+{
+  "name": "Sitting Pretty",
+  "description": "Professional eyelash and microblading services in Manchester. No damage, just perfection.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

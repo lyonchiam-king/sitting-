@@ -1,0 +1,108 @@
+@import "tailwindcss";
+
+@theme {
+  --color-bg: #FDFBF9;
+  --color-surface: #FFFFFF;
+  --color-text: #2D2D2D;
+  --color-muted: #6B6B6B;
+  --color-accent: #D4A5A5;
+  --color-accent-hover: #B88B8B;
+  --color-accent-light: #F7EEEE;
+
+  --font-heading: 'Playfair Display', Georgia, serif;
+  --font-body: 'Lato', system-ui, sans-serif;
+
+  --radius-card: 16px;
+  --radius-badge: 9999px;
+}
+
+@layer base {
+  :root {
+    --bg: #FDFBF9;
+    --surface: #FFFFFF;
+    --text: #2D2D2D;
+    --muted: #6B6B6B;
+    --accent: #D4A5A5;
+    --accent-hover: #B88B8B;
+  }
+
+  body {
+    background-color: var(--bg);
+    color: var(--text);
+    font-family: 'Lato', system-ui, -apple-system, sans-serif;
+    line-height: 1.6;
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-weight: 700;
+    color: var(--text);
+    line-height: 1.25;
+  }
+}
+
+/* Custom Utilities for Design System & Interaction States */
+.font-heading {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-weight: 700;
+}
+
+.font-body {
+  font-family: 'Lato', system-ui, sans-serif;
+}
+
+.hero-headline {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+}
+
+/* Consistent Focus visible accessibility ring in accent color */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+[role="button"]:focus-visible {
+  outline: 2px solid var(--accent) !important;
+  outline-offset: 2px !important;
+  box-shadow: 0 0 0 4px rgba(212, 165, 165, 0.25) !important;
+}
+
+/* Form input focus state */
+input, select, textarea {
+  transition: border-color 200ms ease, box-shadow 200ms ease;
+}
+
+input:focus, select:focus, textarea:focus {
+  border-color: var(--accent) !important;
+}
+
+/* Touch response for buttons and CTAs */
+.btn-primary {
+  background-color: var(--accent);
+  color: #FFFFFF;
+  transition: transform 150ms ease, background-color 200ms ease, box-shadow 200ms ease;
+  cursor: pointer;
+  touch-action: manipulation;
+}
+
+.btn-primary:hover {
+  background-color: var(--accent-hover);
+}
+
+.btn-primary:active {
+  transform: scale(0.95);
+}
+
+/* Smooth horizontal scrollbar hiding for badge strip / tickers */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
